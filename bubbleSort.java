@@ -10,9 +10,9 @@ public class bubbleSort {
 
     private static Integer[] bubbleSorter() {
         int n = testArray.length;
-        for(int i = 0;i < n;i++) {
-            for(int j = 0;j < n-1;j++) {
-                if(testArray[j] > testArray[j + 1]) {
+        for(int i = 0;i < n;i++) {                                  //! Time Complexity = O(n)
+            for(int j = 0;j < n-i-1;j++) {                          //! Time Complexity = O(n)
+                if(testArray[j] > testArray[j + 1]) {               
                     int temp = testArray[j];
                     testArray[j] = testArray[j + 1];
                     testArray[j + 1] = temp;
@@ -20,7 +20,7 @@ public class bubbleSort {
             }
         }
         return testArray;
-    }
+    }                                                               //! Time Complexity = O(n^2)
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(bubbleSorter()));
