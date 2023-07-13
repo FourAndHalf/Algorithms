@@ -22,10 +22,10 @@ public class selectionSort {
                 int temp = testArray[i];
                 testArray[i] = testArray[smallest];
                 testArray[smallest] = temp;
-            }                                                           //! Time Complexity = O(n^2)
+            }                                                           
         }
         return testArray;
-    }
+}                                                                       //! Total Time Complexity = O(n^2)    
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(selectionSorter()));

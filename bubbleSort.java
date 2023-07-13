@@ -20,7 +20,7 @@ public class bubbleSort {
             }
         }
         return testArray;
-    }                                                               //! Time Complexity = O(n^2)
+    }                                                               //! Total Time Complexity = O(n^2)
 
     public static void main(String[] args) {
         System.out.println(Arrays.toString(bubbleSorter()));
