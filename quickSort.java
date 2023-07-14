@@ -10,7 +10,7 @@ public class quickSort {
         int pivot = testArray[high];
         int i = low-1;
 
-        for(int j = low;j < high;j++) {
+        for(int j = low;j < high;j++) {                                             //! Time Complexity = O(n)
             if(testArray[j] < pivot) {
                 i++;
 
@@ -31,10 +31,11 @@ public class quickSort {
         if(low < high) {
             int pidx = partition(testArray, low, high);
 
-            QuickSort(testArray, low, pidx-1);
+            QuickSort(testArray, low, pidx-1);                                      //! Time Complexity = O(log n)
             QuickSort(testArray, pidx+1, high);
         }
-    }
+    }                                                                               //! Total Time Complexity = O(nlog n)
+
     public static void main(String[] args) {
         int[] testArray = {23, 45, 12, 67, 89, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 2, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90};
 
