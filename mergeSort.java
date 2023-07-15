@@ -13,7 +13,7 @@ public class mergeSort{
         int idx2 = mid+1;
         int x = 0;
 
-        while(idx1 <= mid && idx2 <= ei) {
+        while(idx1 <= mid && idx2 <= ei) {                                      //! Time Complexity = O(n)
             if(testArray[idx1] <= testArray[idx2]) {
                 merged[x++] = testArray[idx1++];
             } else {
@@ -38,10 +38,10 @@ public class mergeSort{
 
         int mid = si + (ei - si)/2;
 
-        divide(testArray, si, mid);
+        divide(testArray, si, mid);                                             //! Time Complexity = O(log n)
         divide(testArray, mid+1, ei);
         conquer(testArray, si, mid, ei);
-    }
+    }                                                                           //! Total Time Complexity = O(nlog n)
     
     public static void main(String[] args) {
          int[] testArray = {23, 45, 12, 67, 89, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 2, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90, 2, 45, 67, 32, 12, 65, 78, 90, 34, 56, 78, 90, 34, 56, 78, 90};
