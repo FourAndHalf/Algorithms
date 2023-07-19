@@ -5,11 +5,11 @@ public class validAnagramArray {
         char[] charS = s.toCharArray();
         char[] charT = t.toCharArray();
 
-        Arrays.sort(charS);
-        Arrays.sort(charT);
+        Arrays.sort(charS);                                         //! Time Complexity = O(nlog n)
+        Arrays.sort(charT);                                         //! Time Complexity = O(nlog n)
 
         return Arrays.equals(charS, charT);
-    }
+    }                                                               //! Total Time Complexity = O(nlog n)
 
     public static void main(String[] args) {
         String s = "anagram";

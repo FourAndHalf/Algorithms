@@ -7,7 +7,7 @@ public class groupAnagrams {
     public static List<List<String>> anagramCalculator(String[] strs) {
         HashMap<String, List<String>> map = new HashMap<>();
 
-        for(String word : strs) {
+        for(String word : strs) {                                               //! Time Complexity = O(n)
             char[] chars = word.toCharArray();
             Arrays.sort(chars);
             String sortedWord = new String(chars);
@@ -20,8 +20,7 @@ public class groupAnagrams {
         }
 
         return new ArrayList<>(map.values());
-    }
-
+    }                                                                           //! Total Time Complexity = O(n)
     public static void main(String[] args) {
         String[] strs = {"eat","tea","tan","ate","nat","bat"};
 
