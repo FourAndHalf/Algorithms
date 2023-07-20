@@ -1,23 +1,23 @@
 public class validPalindrome {
 
     //* Brute Force Method
-    // public static boolean palindromeFinder(String s) {
-    //     String lowerS = s.toLowerCase();
-    //     String palindromeString = lowerS.replaceAll("[^a-zA-Z0-9]", "");    //! O(n)
+    public static boolean palindromeFinder(String s) {
+        String lowerS = s.toLowerCase();
+        String palindromeString = lowerS.replaceAll("[^a-zA-Z0-9]", "");    //! O(n)
 
-    //     boolean checker = true;
-    //     char[] chars = palindromeString.toCharArray();                          //! O(n)
-    //     for (int i = 0, j = chars.length-1; i < chars.length; i++, j--) {       //! O(n)
-    //         if(chars[i] != chars[j]) {
-    //             checker = false;
-    //         }
-    //     }
+        boolean checker = true;
+        char[] chars = palindromeString.toCharArray();                          //! O(n)
+        for (int i = 0, j = chars.length-1; i < chars.length; i++, j--) {       //! O(n)
+            if(chars[i] != chars[j]) {
+                checker = false;
+            }
+        }
 
-    //     return checker;
-    // }                                                           //! Total Time Complexity = O(n)
+        return checker;
+    }                                                           //! Total Time Complexity = O(n)
 
     //* Optimized Method
-    public static boolean palindromeFinder(String s) {
+    public static boolean OptimizedPalindromeFinder(String s) {
         if(s.isEmpty()) return true;
 
         int start = 0;
