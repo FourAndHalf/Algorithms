@@ -34,8 +34,8 @@ public class twoSumII {
                 return new int[] {start+1, end+1};                
             }
         }
-        return new int[] {};                                                    //! Total Time Complexity = O(n)
-    }
+        return new int[] {};                                                    
+    }                                                                           //! Total Time Complexity = O(n)
 
     public static void main(String[] args) {
         int[] nums = {5, 25, 75};
