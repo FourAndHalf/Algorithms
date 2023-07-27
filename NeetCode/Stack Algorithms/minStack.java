@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class minStack {
+public class MinStack {
 
     //* Brute Force Method
-    static class MinStack {
+    static class minStack {
         ArrayList<Integer> stack;
         int top;
 

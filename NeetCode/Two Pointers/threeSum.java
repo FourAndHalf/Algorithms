@@ -4,7 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class threeSum {
+public class ThreeSum {
     public static List<List<Integer>> calculateThreeSum(int[] nums) {
         int target = 0;
         Arrays.sort(nums);                                                      //! Time Complexity = O(nlog n)

@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class productExceptSelf {
+public class ProductExceptSelf {
 
     //* Brute Force Method
     public static int[] productExceptSelfFinder(int[] nums) {

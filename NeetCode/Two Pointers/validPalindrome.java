@@ -1,4 +1,4 @@
-public class validPalindrome {
+public class ValidPalindrome {
 
     //* Brute Force Method
     public static boolean palindromeFinder(String s) {

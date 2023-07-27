@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class twoSumII {
+public class TwoSumII {
 
     //* Brute Force Method
     public static int[] sumCalculator(int[] nums, int target) {

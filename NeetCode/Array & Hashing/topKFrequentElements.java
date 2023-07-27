@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-public class topKFrequentElements {
+public class TopKFrequentElements {
 
     //* Brute Force Method
     public static int[] frequencyFinder(int[] nums, int k) {

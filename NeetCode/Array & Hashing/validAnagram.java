@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class validAnagram {
+public class ValidAnagram {
     public static boolean isAnagram(String s, String t) {
         HashMap<Character, Integer> map = new HashMap<>();
 
@@ -51,7 +51,6 @@ public class validAnagram {
 
         return Arrays.equals(charS, charT);
     }                                                                       //! Total Time Complexity = O(nlog n)
-
 
     public static void main(String[] args) {
         String s = "anagram";

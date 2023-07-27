@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class groupAnagrams {
+public class GroupAnagrams {
     public static List<List<String>> anagramCalculator(String[] strs) {
         HashMap<String, List<String>> map = new HashMap<>();
 

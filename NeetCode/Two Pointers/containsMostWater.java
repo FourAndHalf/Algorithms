@@ -1,4 +1,4 @@
-public class containsMostWater {
+public class ContainsMostWater {
 
     //* Brute Force Method 
     public static int volumeCalculator(int[] heights) {

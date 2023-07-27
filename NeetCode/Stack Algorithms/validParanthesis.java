@@ -1,6 +1,6 @@
 import java.util.Stack;
 
-public class validParanthesis {
+public class ValidParanthesis {
     public static boolean isValidParanthesis(String s) {
         s = s.replaceAll("[^(){}\\[\\]]", "");
         Stack<Character> map = new Stack<>();

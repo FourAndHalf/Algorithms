@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class twoSum {
+public class TwoSum {
     public static int[] twoSumCalculator(int[] nums, int target) {
         int n = nums.length;
         for(int i = 0;i < n-1;i++) {                                            //! Time Complexity = O(n)

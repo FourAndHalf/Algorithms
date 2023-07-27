@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class containsDuplicate {
+public class ContainsDuplicate {
 
     public static boolean hashing(int[] testArray) {
         HashMap<Integer, Integer> map = new HashMap<>();
