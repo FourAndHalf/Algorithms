@@ -14,7 +14,7 @@ function spiralOrder(matrix: number[][]): number[] {
         return outOfBounds || hasVisited;
     }
 
-    while(!visitedCells.has(`${row}x${column}`)) {
+    while(!visitedCells.has(`${row}x${column}`)) {                                  //! Time Complexity = O(m*n)
         if(row in matrix && column in matrix[row]) {
             visitedCells.set(`${row}x${column}`, true);
 
@@ -54,9 +54,8 @@ function spiralOrder(matrix: number[][]): number[] {
         }
     }
 
-
     return solution;
-};
+};                                                                                  //! Total Time Complexity = O(m*n)
 
 let testCase: number[][] = [[1,2,3],[4,5,6],[7,8,9]];
 
