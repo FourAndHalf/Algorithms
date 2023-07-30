@@ -1,3 +1,5 @@
+export {};
+
 function generate(rows: number): number[][] {
     let solution: number[][] = [[]];
     solution[0][0] = 1;

@@ -1,3 +1,5 @@
+export {};
+
 function spiralOrder(matrix: number[][]): number[] {
     let solution: number[] = [];
 

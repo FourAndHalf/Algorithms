@@ -1,3 +1,5 @@
+export {};
+
 function subarraySum(nums: number[], k: number): number {
     let count: number = 0;
     let hashmap = new Map<number, number>();
