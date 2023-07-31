@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 
 public class TwoSum {
+    //* Brute Force Method
     public static int[] twoSumCalculator(int[] nums, int target) {
         int n = nums.length;
         for(int i = 0;i < n-1;i++) {                                            //! Time Complexity = O(n)
@@ -14,6 +15,7 @@ public class TwoSum {
         return new int[]{}; 
     }                                                                           //! Total Time Complexity = O(n^2)
 
+    //* HashMap Method
     public static int[] optimizedTwoSumCalculator(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int n = nums.length;

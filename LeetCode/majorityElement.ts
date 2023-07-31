@@ -2,7 +2,7 @@ export {};
 
 //* Moore Voting Algorithm
 function majorityElement(nums: number[]): number {
-    nums.sort;
+    nums.sort((a,b) => a-b);
     let candidate: number = 0;
     let count: number = 0;
 
