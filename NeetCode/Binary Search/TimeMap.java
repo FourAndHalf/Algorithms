@@ -27,7 +27,7 @@ public class TimeMap {
             list.add(newNode);
             store.put(key, list);
         }
-    }
+    }                                                                               //! Time Complexity = O(1)
 
     public String get(String key, int timestamp) {
         String value = "";
@@ -50,7 +50,7 @@ public class TimeMap {
         }
 
         return value;
-    }
+    }                                                                       //! Total Time Complexity = O(log n)
 
     public static void main(String[] args) {
         TimeMap obj = new TimeMap();

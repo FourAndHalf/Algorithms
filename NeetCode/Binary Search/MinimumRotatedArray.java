@@ -7,7 +7,7 @@ public class MinimumRotatedArray {
 
         if(nums[left] < nums[right]) return nums[left];
 
-        while(left <= right) {
+        while(left <= right) {                                              //! Time Complexity = O(log n)
             int middle = left + (right-left)/2;
             min = Math.min(min, nums[middle]);
 
@@ -19,7 +19,7 @@ public class MinimumRotatedArray {
         }
 
         return min;
-    }
+    }                                                                       //! Total Time Complexity = O(log n)
 
     public static void main(String[] args) {
         int[] nums = {3, 4, 5, 1, 2};
