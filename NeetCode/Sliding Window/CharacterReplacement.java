@@ -8,10 +8,8 @@ public class CharacterReplacement {
         int left = 0;
         int right = 0;
         int maximum = 0;
-        map.put(string[right], 1);
 
-        for(int i = 0;i < string.length-1;i++) {
-            right++;
+        while(right < string.length) {                              //! Time Complexity = O(n)
             if(map.containsKey(string[right])) {
                 int count = map.get(string[right]);
                 count += 1;
@@ -20,22 +18,20 @@ public class CharacterReplacement {
                 map.put(string[right], 1);
             }
 
-            int count = Collections.max(map.values());
+            int max = Collections.max(map.values());
 
-            if(((right - left) - count) <= k) {
-                maximum = Math.max(maximum, right-left);
+            while(((right-left)-max) >= k) {                        //! Time Complexity = O(26)
+                int count = map.get(string[left]);
+                count--;
+                map.put(string[left], count);
+                left++;
             }
             
-            while(((right - left) - count) >= k) {
-                left++;
-                int counter = map.get(string[left-1]);
-                counter--;
-                map.put(string[left-1], counter);
-            }
+            maximum = Math.max(maximum, right-left+1);
+            right++;
         }
-
         return maximum;
-    }
+    }                                                               //! Total Time Complexity = O(26n)
 
     public static void main(String[] args) {
         // String s = "AABABBA";
