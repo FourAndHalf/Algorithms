@@ -5,15 +5,15 @@ public class PermutationInString {
         int[] data = new int[26];
         int[] test = new int[26];
 
-        for(char c : s1.toCharArray()) 
+        for(char c : s1.toCharArray())                                      //! Time Complexity = O(n)
             data[c - 'a']++;
         
-        for(int i = 0;i < s1.length();i++) 
+        for(int i = 0;i < s1.length();i++)                                  //! Time Complexity = O(n)
             test[s2.charAt(i) - 'a']++;
 
         int n = s1.length();
 
-        for(int i = 0;i < s2.length()-n;i++) {
+        for(int i = 0;i < s2.length()-n;i++) {                              //! Time Complexity = O(n)
             if(equalString(data, test)) return true;
 
             test[s2.charAt(i+n) - 'a']++;
@@ -21,7 +21,7 @@ public class PermutationInString {
         }
 
         return equalString(data, test);
-    }
+    }                                                                       //! Total Time Complexity = O(n)
 
     public static boolean equalString(int[] s1, int[] s2) {
         for(int i = 0;i < 26;i++) {

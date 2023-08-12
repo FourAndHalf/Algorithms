@@ -12,8 +12,9 @@ public class ReverseLinkedList {
         }
     }   
     
-    public ListNode reverseList() {
-            
+    public static ListNode reverseList() {
+        
+        return reverse;
     }
 
     public static void main(String[] args) {
