@@ -13,32 +13,30 @@ public class MergeSortedLists {
         }
     }   
 
-    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-        ListNode pointer1 = list1;
-        ListNode pointer2 = list2;
-        ListNode mergedList;
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode();
+        ListNode tail = dummy;
 
-        if(pointer1.value < pointer2.value) {
-            mergedList = new ListNode(pointer1.value);
-            pointer1 = pointer1.next;
-        } else {
-            mergedList = new ListNode(pointer2.value);
-            pointer2 = pointer2.next;
-        }
-
-        ListNode current = mergedList;
-
-        while(pointer1 != null || pointer2 != null) {
-            if(pointer1.value < pointer2.value) {
-                current.next = new ListNode(pointer1.value);
-                pointer1 = pointer1.next;
+        while(list1 != null && list2 != null) {                     //! Time Complexity = O(n)
+            if(list1.value < list2.value) {
+                tail.next = list1;
+                list1 = list1.next;
             } else {
-                current.next = new ListNode(pointer2.value);
-                pointer2 = pointer2.next;
+                tail.next = list2;
+                list2 = list2.next;
             }
+
+            tail = tail.next;
         }
-        return mergedList;
-    }
+
+        if(list1 != null) {
+            tail.next = list1;
+        } else if(list2 != null) {
+            tail.next = list2;
+        }
+
+        return dummy.next;
+    }                                                               //! Total Time Complexity = O(n)
 
     public static void main(String[] args) {
         int[] values = {1, 2, 4};
@@ -59,5 +57,6 @@ public class MergeSortedLists {
             current = current.next;
         }
 
+        mergeTwoLists(list1, list2);
     }
 }
