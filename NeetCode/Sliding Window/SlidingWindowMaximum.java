@@ -25,12 +25,15 @@ public class SlidingWindowMaximum {
         }
         
         return result;
-    }
+    }                                                                                   //! Total Time Complexity = O(n)
     
     public static void main(String[] args) {
-        int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
-        int k = 3;
+        // int[] nums = {1, 3, -1, -3, 5, 3, 6, 7};
+        // int k = 3;
 
+        int[] nums = {1, 1, 1, 1, 1, 4, 5};
+        int k = 6; 
+        
         System.out.println(Arrays.toString(windowMaximum(nums, k)));
     }
 }
