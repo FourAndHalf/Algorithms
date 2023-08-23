@@ -1,62 +1,31 @@
 public class MedianSortedArray {
+
     public static double findMedian(int[] nums1, int[] nums2) {
-        int total = nums1.length + nums2.length;
-        int half = total/2;
-        int[] A = nums1;
-        int[] B = nums2;        
-
-        if(B.length < A.length) {
-            A = B;
-            B = nums1;
+        int n1 = nums1.length, n2 = nums2.length;
+        if (n1 > n2)
+            return findMedian(nums2, nums1);
+        int n = n1 + n2;
+        int left = (n1 + n2 + 1) / 2;
+        int low = 0, high = n1;
+        while (low <= high) {
+            int mid1 = (low + high) / 2;
+            int mid2 = left - mid1;
+            int l1 = (mid1 > 0) ? nums1[mid1 - 1] : Integer.MIN_VALUE;
+            int l2 = (mid2 > 0) ? nums2[mid2 - 1] : Integer.MIN_VALUE;
+            int r1 = (mid1 < n1) ? nums1[mid1] : Integer.MAX_VALUE;
+            int r2 = (mid2 < n2) ? nums2[mid2] : Integer.MAX_VALUE;
+            
+            if (l1 <= r2 && l2 <= r1) {
+                if (n % 2 == 1)
+                    return Math.max(l1, l2);
+                else
+                    return (double) (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;
+            } else if (l1 > r2)
+                high = mid1 - 1;
+            else
+                low = mid1 + 1;
         }
-
-        int left = 0;
-        int right = A.length-1;
-        
-        while (true) {
-            int i = (left + right)/2;
-            int j = half - i - 2;
-            int ALeft = 0;
-            int ARight = 0;
-            int BLeft = 0;
-            int BRight = 0;
-
-            if(i >= 0) {
-                ALeft = A[i];
-            } else {
-                ALeft = Integer.MIN_VALUE;
-            }
-
-            if(i+1 < A.length) {
-                ARight = A[i+1];
-            } else {
-                ARight = Integer.MAX_VALUE;
-            }
-
-            if(j >= 0) {
-                BLeft = A[j];
-            } else {
-                BLeft = Integer.MIN_VALUE;
-            }
-
-            if(j+1 < A.length) {
-                BRight = A[j+1];
-            } else {
-                BRight = Integer.MAX_VALUE;
-            }
-
-            if(ALeft <= BRight && BLeft <= ARight) {
-                if(total%2 != 0) {
-                    return (double)Math.min(ARight, BRight);
-                }
-
-                return (Math.max(ALeft, BLeft) + Math.min(ARight, BRight))/2.0;
-            } else if(ALeft > BRight) {
-                right = i-1;
-            } else {
-                left = i+1;
-            }
-        }
+        return 0.0;
     }
 
     public static void main(String[] args) {
