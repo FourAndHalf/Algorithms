@@ -1,18 +1,7 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class CopyRandomPointer {
-
-    public static class ListNode {
-        int value;
-        ListNode next;
-        ListNode() {}
-        ListNode(int value) {
-            this.value = value;
-        }
-        ListNode(int value, ListNode next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
-
     public static class Node {
         int value;
         Node next;
@@ -24,12 +13,34 @@ public class CopyRandomPointer {
             this.random = null;
         }
     }
+    
+    private static Map<Node, Node> map = new HashMap<>();
 
-    public static Node copyRandomNode(Node head) {
+    public static Node copyRandomList(Node head) {
+        if (head == null)
+        return null;
+        if (map.containsKey(head))
+        return map.get(head);
+
+        Node newNode = new Node(head.value);
+        map.put(head, newNode);
+        newNode.next = copyRandomList(head.next);
+        newNode.random = copyRandomList(head.random);
         
+        return newNode;
     }
+
     
     public static void main(String[] args) {
-        
+        int[] values = {7, 13, 11, 10, 1};
+        Node head = new Node(values[0]);     
+        Node current = head;
+
+        for(int i = 1;i < values.length;i++) {
+            current.next = new Node(i);
+            current = current.next;
+        }
+
+        copyRandomList(head);
     }
 }
