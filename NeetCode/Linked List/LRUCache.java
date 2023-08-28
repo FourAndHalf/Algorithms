@@ -76,4 +76,4 @@ public class LRUCache {
         map.put(key, head.next);
     }
 
-}
+}                                                               //! Total Time Complexity = O(1)
