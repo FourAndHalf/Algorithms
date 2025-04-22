@@ -15,7 +15,16 @@
 public class Solution
 {
 
-    // Solution using basic recursion technique
+    /** Solution using basic recursion technique
+    *
+    *   Time Complexity : O(n)
+    *   Space Complexity : O(h)
+    *           Best Case (balanced tree) : O(log(n))  
+    *           Worst Case (degenerate tree) : O(n)  
+    *   
+    *   n : Number of Elements, h: Height of the tree
+    *   
+    */
     public TreeNode InvertTree(TreeNode root)
     {
         if (root == null) return null;
@@ -30,7 +39,12 @@ public class Solution
         return root;
     }
 
-    // Solution using a queue datastructure for storing the nodes
+    /** Solution using a queue datastructure for storing the nodes
+    *
+    *   Time Complexity : O(n)
+    *   Space Complexity : O(n)
+    *
+    */
     public TreeNode InvertTree(TreeNode root)
     {
         if (root == null)
