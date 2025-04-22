@@ -12,8 +12,12 @@
  * }
  */
 
-public class Solution {
-    public TreeNode InvertTree(TreeNode root) {
+public class Solution
+{
+
+    // Solution using basic recursion technique
+    public TreeNode InvertTree(TreeNode root)
+    {
         if (root == null) return null;
 
         TreeNode tmp = root.left;
@@ -22,6 +26,34 @@ public class Solution {
 
         InvertTree(root.left);
         InvertTree(root.right);
+
+        return root;
+    }
+
+    // Solution using a queue datastructure for storing the nodes
+    public TreeNode InvertTree(TreeNode root)
+    {
+        if (root == null)
+            return null;
+
+        Queue<TreeNode> queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+
+        while (queue.Count > 0)
+        {
+            TreeNode node = queue.Dequeue();
+            TreeNode tmp = new TreeNode();
+
+            tmp = node.left;
+            node.left = node.right;
+            node.right = tmp;
+
+            if (node.left != null)
+                queue.Enqueue(node.left);
+
+            if (node.right != null)
+                queue.Enqueue(node.right);
+        }
 
         return root;
     }
