@@ -57,4 +57,31 @@ public class Solution
 
         return root;
     }
+
+    // Implementation of the same algorithm using Stack datastructure
+    public TreeNode InvertTree(TreeNode root)
+    {
+        if (root == null)
+            return null;
+
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+
+        stack.Push(root);
+
+        while (stack.Count > 0)
+        {
+            TreeNode node = stack.Pop();
+            TreeNode tmp = node.left;
+            node.left = node.right;
+            node.right = tmp;
+
+            if (node.left != null)
+                stack.Push(node.left);
+
+            if (node.right != null)
+                stack.Push(node.right);
+        }
+
+        return root;
+    }
 }
