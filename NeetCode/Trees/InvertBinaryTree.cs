@@ -72,7 +72,12 @@ public class Solution
         return root;
     }
 
-    // Implementation of the same algorithm using Stack datastructure
+    /** Implementation of the same algorithm using Stack datastructure
+    *
+    *   Time Complexity : O(n)
+    *   Space Complexity : O(n)
+    *
+    */
     public TreeNode InvertTree(TreeNode root)
     {
         if (root == null)
