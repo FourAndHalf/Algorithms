@@ -12,6 +12,16 @@
  * }
  */
 
+/** Brute Force Method
+    Iterating over every node from the root
+
+    Time Complexity : O(n^2)
+    Space Complexity : O(n)
+
+    Should do better than this using Depth First Search (DFS)
+
+*/
+
 public class Solution
 {
     public bool IsBalanced(TreeNode root)
