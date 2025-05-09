@@ -1,5 +1,0 @@
-/*
-    Counting Bits - Mock Interview
-
-    
-*/
