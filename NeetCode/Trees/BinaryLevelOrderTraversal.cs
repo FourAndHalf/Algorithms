@@ -22,7 +22,42 @@
  * }
  */
 
-/*
+/**
+ * Depth First Search Solution
+ * 
+ * [Using Backtracking]
+ * Goes recursively to the last node in each branch,
+ * Keeps track of the level of the node in each recursion,
+ * Adds the value to the global variable on each recursion
+ *
+ * Time Complexity: O(n)
+ * Space Complexity: O(n)
+ *
+*/
+public class SolutionDFS {
+    List<List<int>> res = new List<List<int>>();
+
+    public List<List<int>> LevelOrder(TreeNode root) {
+        dfs(root, 0);
+
+        return res;
+    }
+
+    private void dfs(TreeNode node, int depth)
+    {
+        if (node == null)
+            return;
+
+        if (res.Count == depth)
+            res.Add(new List<int>());
+        
+        res[depth].Add(node.val);
+        dfs(node.left, depth+1);
+        dfs(node.right, depth+1);
+    }
+}
+
+/**
  * Breadth First Search Solution
  *
  * [Using Queue Datastructure]
@@ -33,7 +68,7 @@
  * Space Complexity: O(n)
  *
 */
-public class Solution {
+public class SolutionBFS {
     public List<List<int>> LevelOrder(TreeNode root) {
         List<List<int>> res = new List<List<int>>();
 
