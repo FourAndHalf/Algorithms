@@ -71,4 +71,11 @@ print("Top 3 Scores")
 print(handle_tie_scores)
 
 
-# Q3. Detect mismatched list lengths
+# Q5. Detect mismatched list lengths
+
+from itertools import zip_longest
+
+for name, score in zip_longest(names, scores, fillvalue=None):
+    if name is None or score is None:
+        print ("Mismatch Detected")
+
