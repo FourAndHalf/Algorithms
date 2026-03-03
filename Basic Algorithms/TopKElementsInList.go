@@ -1,7 +1,5 @@
 package main 
 
-import "fmt"
-
 func topKFrequent(arr []int, k int) []int {
     HashMap := make(map[int]int)
 
