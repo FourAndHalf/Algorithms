@@ -9,6 +9,7 @@ even = list(filter(lambda x: x is not None and x%2==0, nums))
 print(f"Squared: {squared}")
 print("\n")
 print(f"Even: {even}")
+print("\n")
 
 # Map takes all the values and overwrites them over the same index position as the master
 # Filter takes out all other values that fail the condition and creates a new entity
